@@ -6,7 +6,7 @@ namespace Store.Domain.Entities
 {
     public class Order : Notifiable
     {
-        public Order(Customer customer, int deliveryFee, Discount discount, Guid id)
+        public Order(Customer customer, decimal deliveryFee, Discount discount)
         {
             AddNotifications(
                 new Contract()
@@ -27,7 +27,7 @@ namespace Store.Domain.Entities
         public DateTime Date { get; private set; }
         public string Number { get; private set; }
         public int Status { get; private set; }
-        public int DeliveryFee { get; private set; }
+        public decimal DeliveryFee { get; private set; }
         public Discount Discount { get; private set; }
         public IList<OrderItem> Items { get; private set; }
 
